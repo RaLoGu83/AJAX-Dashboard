@@ -28,6 +28,7 @@ function get_data_az() {
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>City</th>
           </tr>`;
             document.querySelector("thead").innerHTML = headers;
 
@@ -38,6 +39,7 @@ function get_data_az() {
                 <td>${facility.name}</td>
                 <td>${facility.email}</td>
                 <td>${facility.phone}</td>
+                <td>${facility.address.city}</td>
               </tr>
             `;
             });
@@ -58,6 +60,7 @@ function get_data_za() {
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>City</th>
           </tr>`;
             document.querySelector("thead").innerHTML = headers;
 
@@ -68,6 +71,7 @@ function get_data_za() {
                 <td>${facility.name}</td>
                 <td>${facility.email}</td>
                 <td>${facility.phone}</td>
+                <td>${facility.address.city}</td>
               </tr>
             `;
             });
