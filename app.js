@@ -1,8 +1,14 @@
 const order = document.getElementById("order");
 const loading = document.getElementById("result");
+const muchRes = document.getElementById("muchRes");
 loading.textContent = "";
 
-order.addEventListener("change", function (e) {
+order.addEventListener("change", function () {
+  loading.textContent = "Loading...";
+  get_data();
+});
+
+muchRes.addEventListener("change", function () {
   loading.textContent = "Loading...";
   get_data();
 });
@@ -15,12 +21,15 @@ function get_data() {
     .then(response => response.json())
     .then(data => {
 
+      // Elegir orden
       if (order.value === "asc") {
         data.sort((a, b) => a.name.localeCompare(b.name));
-      }
-      else {
+      } else {
         data.sort((a, b) => b.name.localeCompare(a.name));
       };
+
+      // Limitar la cantidad de datos mostrados
+      data = data.slice(0, muchRes.value);
 
       let headers = `
           <tr>
