@@ -1,4 +1,5 @@
 const order = document.getElementById("order");
+const resul = document.getElementById("resul");
 const loading = document.getElementById("result");
 const muchRes = document.getElementById("muchRes");
 loading.textContent = "";
@@ -30,7 +31,7 @@ function get_data() {
 
       // Limitar la cantidad de datos mostrados
       data = data.slice(0, muchRes.value);
-
+      resul.textContent = "Showing " + muchRes.value + " of 10 results";
       let headers = `
           <tr>
             <th>Name</th>
